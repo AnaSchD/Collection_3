@@ -41,7 +41,7 @@ public class Main {
         recipeCollection.addRecipeInRecipeCollection(recipe1);
         recipeCollection.addRecipeInRecipeCollection(recipe2);
 
-        System.out.println(recipeCollection);
+//        System.out.println(recipeCollection);
 
 
         Passport passport1 = new Passport("Inna", "Ivanova", "Vasilyeva", "09.10.1996", 272);
@@ -54,11 +54,39 @@ public class Main {
         Passport.addPassportInCollection(passport3);
         Passport.addPassportInCollection(passport4);
 
-        System.out.println(Arrays.toString(Passport.passportList.toArray()));
-        System.out.println(Passport.searchPassport(67748372));
+//        System.out.println(Arrays.toString(Passport.passportList.toArray()));
+//        System.out.println(Passport.searchPassport(67748372));
+//
+//
+//        System.out.println(randomNumbers());
 
 
-        System.out.println(randomNumbers());
+
+        PhoneDirectory.phoneDirectory.put("Иванов Иван", "8923447338");
+        PhoneDirectory.phoneDirectory.put("Иванов Петя", "892344688338");
+        PhoneDirectory.phoneDirectory.put("Иванов Слава", "89237488338");
+        PhoneDirectory.phoneDirectory.put("Иванов Миша", "8923474338");
+        PhoneDirectory.phoneDirectory.put("Сидоров Иван", "89233488338");
+        PhoneDirectory.phoneDirectory.put("Петров Иван", "892348338");
+        PhoneDirectory.phoneDirectory.put("Слива Иван", "89234434338");
+        PhoneDirectory.phoneDirectory.put("Адексеев Иван", "8944334488338");
+        PhoneDirectory.phoneDirectory.put("Алексеев Алексей", "8234488338");
+        PhoneDirectory.phoneDirectory.put("Гришин Александр", "89237688338");
+        PhoneDirectory.phoneDirectory.put("Семенов Миша", "892344883098");
+        PhoneDirectory.phoneDirectory.put("Комисаров Евгений", "892345488338");
+        PhoneDirectory.phoneDirectory.put("Силов Миша", "89234488548");
+        PhoneDirectory.phoneDirectory.put("Петров Григорий", "8953488338");
+        PhoneDirectory.phoneDirectory.put("Машкин Владимир", "89984488338");
+        PhoneDirectory.phoneDirectory.put("Михайлов Максим", "89294488338");
+        PhoneDirectory.phoneDirectory.put("Андреев Михаил", "89230488338");
+        PhoneDirectory.phoneDirectory.put("Бездов Слава", "89234768338");
+        PhoneDirectory.phoneDirectory.put("Левый Иван", "89234483438");
+        PhoneDirectory.phoneDirectory.put("Милкин Иван", "89234488438");
+        PhoneDirectory.phoneDirectory.put("Слезов Саша", "892344881338");
+        PhoneDirectory.phoneDirectory.put("Силков Андрей", "89234578338");
+
+        System.out.println(PhoneDirectory.phoneDirectory);
+
     }
 
     //дз 2 зад 2
