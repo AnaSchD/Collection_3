@@ -1,64 +1,12 @@
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class Main {
+
+    public static Map<String, Integer> map = new LinkedHashMap<>();
+    static Map<String, List<Integer>> map1 = new HashMap<>();
+
+
     public static void main(String[] args) {
-
-        Product product1 = new Product("Банан", 2.4, 46);
-        Product product2 = new Product("Яблоки", 3.4, 356);
-        Product product3 = new Product("Картошка", 1.7, 65);
-        Product product4 = new Product("Апельсины", 1.8, 55);
-
-
-        Product potato = new Product("картошка", 2.5, 55);
-        Product pork = new Product("свинина", 1.5, 350);
-        Product onion = new Product("лук", 0.3, 14);
-        Product cabbage = new Product("капуста", 1.1, 55);
-        Product carrot = new Product("морковь", 0.2, 19);
-        Product carrot1 = new Product("морковь", 0.2, 19);
-
-
-        Set<Product> recipe = new HashSet<>();
-        recipe.add(pork);
-        recipe.add(potato);
-        recipe.add(onion);
-        recipe.add(cabbage);
-        recipe.add(carrot);
-
-        Set<Product> recipe01 = new HashSet<>();
-        recipe01.add(pork);
-        recipe01.add(onion);
-        recipe01.add(carrot1);
-
-        Recipe recipe1 = new Recipe(recipe, "Shchi");
-        Recipe recipe2 = new Recipe(recipe01, "Shchi8");
-        // Recipe recipe2 = new Recipe(recipe01, "Shchi");
-
-        RecipeCollection recipeCollection = new RecipeCollection();
-
-
-        recipeCollection.addRecipeInRecipeCollection(recipe1);
-        recipeCollection.addRecipeInRecipeCollection(recipe2);
-
-//        System.out.println(recipeCollection);
-
-
-        Passport passport1 = new Passport("Inna", "Ivanova", "Vasilyeva", "09.10.1996", 272);
-        Passport passport2 = new Passport("Aleksey1", "Alekseev", "Alekseev", "05.12.1978", 67748372);
-        Passport passport3 = new Passport("Aleksey2", "Alekseev", "Alekseev", "05.12.1978", 6783729);
-        Passport passport4 = new Passport("Aleksey3", "Alekseev", "Alekseev", "05.12.1978", 678372);
-
-        Passport.addPassportInCollection(passport1);
-        Passport.addPassportInCollection(passport2);
-        Passport.addPassportInCollection(passport3);
-        Passport.addPassportInCollection(passport4);
-
-//        System.out.println(Arrays.toString(Passport.passportList.toArray()));
-//        System.out.println(Passport.searchPassport(67748372));
-//
-//
-//        System.out.println(randomNumbers());
 
 
 
@@ -85,33 +33,77 @@ public class Main {
         PhoneDirectory.phoneDirectory.put("Слезов Саша", "892344881338");
         PhoneDirectory.phoneDirectory.put("Силков Андрей", "89234578338");
 
-        System.out.println(PhoneDirectory.phoneDirectory);
+        //System.out.println(PhoneDirectory.phoneDirectory);
+
+        Map<String, Integer> map = new HashMap<>();
+        map.put("a", 1);
+        map.put("b", 4);
+        map.put("a", 5);
+        System.out.println(map);
+
+
+        map1.put("a", addRand());
+        map1.put("b", addRand());
+        map1.put("c", addRand());
+        map1.put("d", addRand());
+        map1.put("e", addRand());
+
+        System.out.println(map1);
+        method(map1);
+
+
+        //дз 2 зад 2
+
+        map.put("a", 1);
+        map.put("b", 2);
+        map.put("c", 3);
+        map.put("d", 4);
+        map.put("e", 5);
+        map.put("f", 6);
+        map.put("j", 7);
+        map.put("k", 8);
+        map.put("l", 9);
+        map.put("m", 10);
+        System.out.println(map);
 
     }
 
-    //дз 2 зад 2
+// дз 1 зад 3
+    public static void addMap(String key, Integer value) {
 
-    public static Set<Integer> randomNumbers() {
-        Set<Integer> integers = new HashSet<>();
-        for (int i = 0; i < 20; i++) {
-            double random = Math.random() * 1000;
-            integers.add((int)random);
+        if (map.containsKey(key) && map.get(key).equals(value)) {
+            throw new RuntimeException("Данные совпадают");
         }
-        System.out.println(integers);
-        for (Integer count : integers) {               //?????????????????????????????? я сделала по изученным темам
-            if (count % 2 != 0) {
-                integers.remove(count);
+        map.put(key, value);
+    }
+
+//дз 2 зад 1
+
+    public static List addRand(){
+
+        List<Integer> list = new ArrayList<>();
+        Random random = new Random();
+        int one = random.nextInt(1000);
+        int two = random.nextInt(1000);
+        int three = random.nextInt(1000);
+        list.add(one);
+        list.add(two);
+        list.add(three);
+        return list;
+    }
+    public static void method(Map map){
+        for (var keySet: map1.keySet()) {
+            Integer sum = 0;
+            List <Integer>list = map1.get(keySet);
+            for (Integer integerSum : list) {
+                sum += integerSum;
             }
+            map.put(keySet, sum);
         }
-        return integers;
+        System.out.println(map);
     }
-
-    // дз 3 зад 4
-    // HashSet, потому что изначально идет сравнение по хеш-коду
-    //
-
-
-
 
 
 }
+
+
