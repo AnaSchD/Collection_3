@@ -1,8 +1,9 @@
+import java.sql.Array;
 import java.util.*;
 
 public class Main {
 
-    public static Map<String, Integer> map = new LinkedHashMap<>();
+    public static Map<String, Integer> map = new HashMap<>();
     static Map<String, List<Integer>> map1 = new HashMap<>();
 
 
@@ -49,22 +50,31 @@ public class Main {
         map1.put("e", addRand());
 
         System.out.println(map1);
-        method(map1);
+        method();
 
 
         //дз 2 зад 2
 
-        map.put("a", 1);
-        map.put("b", 2);
-        map.put("c", 3);
-        map.put("d", 4);
-        map.put("e", 5);
-        map.put("f", 6);
-        map.put("j", 7);
-        map.put("k", 8);
-        map.put("l", 9);
-        map.put("m", 10);
-        System.out.println(map);
+        Map<Integer, String> map3 = new LinkedHashMap<>();
+
+        map3.put(1, "a");
+        map3.put(2, "b");
+        map3.put(3, "c");
+        map3.put(4, "d");
+        map3.put(5, "e");
+        map3.put(6, "f");
+        map3.put(7, "j");
+        map3.put(8, "k");
+        map3.put(9, "l");
+        map3.put(10, "m");
+
+
+
+
+        for (int i = 0; i < map3.size(); i++) {
+            System.out.println(map3.keySet().toArray()[i] + ":" + map3.get(i+1));
+        }
+
 
     }
 
@@ -91,7 +101,7 @@ public class Main {
         list.add(three);
         return list;
     }
-    public static void method(Map map){
+    public static void method(){
         for (var keySet: map1.keySet()) {
             Integer sum = 0;
             List <Integer>list = map1.get(keySet);
